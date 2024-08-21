@@ -1,20 +1,71 @@
-# Signal Generator and USB Reader Application
+# Installation Guide
 
-## Overview
+## Prerequisites
 
-This project is a Python application designed for generating and reading signals using a USB interface. It provides a graphical user interface (GUI) to visualize signals and manage waveform data.
+Before installing the dependencies, ensure you have Python 3.7 or later installed on your system.
 
-## Features
+## Installing Dependencies
 
-- **Signal Generation**: Simulates signal generation with adjustable parameters.
-- **USB Reader**: Interfaces with USB devices to read incoming data.
-- **Waveform Visualization**: Displays signal waveforms using Matplotlib integrated with PySide6.
-- **Waveform Saving**: Allows users to save waveform data to CSV files.
+1. Clone the repository or download the source code.
 
-## Installation
+2. Navigate to the project directory in your terminal or command prompt.
 
-To install the necessary dependencies, run the following command:
+3. Install the required Python packages:
 
-```bash
-pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+## Special Instructions for pyusb
+
+The pyusb package requires additional setup beyond a simple pip installation:
+
+### On Windows:
+
+1. Install the appropriate USB driver for your device. This might be:
+   - WinUSB
+   - libusb-win32
+   - libusbK
+
+2. You may need to use Zadig (http://zadig.akeo.ie/) to install the driver for your specific USB device.
+
+### On Linux:
+
+1. Install libusb:
+   ```bash
+   sudo apt-get install libusb-1.0-0
+   ```
+
+2. You may need to add udev rules to allow non-root access to the USB device. Create a file `/etc/udev/rules.d/99-myusb.rules` with content similar to:
+   ```
+   SUBSYSTEM=="usb", ATTRS{idVendor}=="XXXX", ATTRS{idProduct}=="YYYY", MODE="0666"
+   ```
+   Replace XXXX and YYYY with your device's vendor and product IDs.
+
+3. Reload udev rules:
+   ```bash
+   sudo udevadm control --reload-rules && sudo udevadm trigger
+   ```
+
+### On macOS:
+
+1. Install libusb using Homebrew:
+   ```bash
+   brew install libusb
+   ```
+
+After setting up libusb, you should be able to use pyusb successfully.
+
+## Verifying the Installation
+
+After installing all dependencies, you can verify the installation by running a simple Python script that imports the required libraries:
+
+```python
+import pyusb
+import PySide6
+import matplotlib
+
+print("All libraries installed successfully!")
+```
+
+If this script runs without any errors, your installation is complete and ready for use.
