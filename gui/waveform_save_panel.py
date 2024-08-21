@@ -62,13 +62,17 @@ class WaveformSavePanel(QtWidgets.QWidget):
         self.filename_input.setPlaceholderText("输入文件名")
         layout.addWidget(self.filename_input)
 
-        # 记录时间长度选择
+        # 记录时间长度选择（使用 QLineEdit 代替 QSpinBox）
         time_layout = QtWidgets.QHBoxLayout()
         time_layout.addWidget(QtWidgets.QLabel("记录时间 (秒):"))
-        self.time_spinbox = QtWidgets.QSpinBox()
-        self.time_spinbox.setRange(1, 3600)  # 1秒到1小时
-        self.time_spinbox.setValue(60)  # 默认60秒
-        time_layout.addWidget(self.time_spinbox)
+        self.time_input = QtWidgets.QLineEdit()
+        self.time_input.setText("60")  # 默认值为60秒
+        self.time_input.setFixedWidth(70)
+        # 设置验证器，只允许输入1-3600之间的整数
+        validator = QtGui.QIntValidator(1, 3600)
+        self.time_input.setValidator(validator)
+        time_layout.addWidget(self.time_input)
+        time_layout.addStretch()
         layout.addLayout(time_layout)
 
         # 保存按钮

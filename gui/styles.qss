@@ -1,0 +1,94 @@
+/* Global styles */
+QWidget {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+}
+
+QMainWindow, QDialog {
+    background-color: #f0f0f0;
+}
+
+QPushButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QPushButton:pressed {
+    background-color: #004085;
+}
+
+QLineEdit, QSpinBox {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px;
+    background-color: white;
+}
+
+QLineEdit:focus, QSpinBox:focus {
+    border-color: #80bdff;
+    border-width: 2px;
+}
+
+QLabel {
+    color: #495057;
+    border: none;
+}
+
+QTreeView {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+}
+
+QTreeView::item:hover {
+    background-color: #e9ecef;
+}
+
+QTreeView::item:selected {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Custom styles for specific widgets */
+#ConnectionInfoWidget {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+#WaveformSavePanel {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+#PlotCanvas {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+/* Specific adjustments for main window */
+QMainWindow > QWidget {
+    background-color: transparent;
+}
+
+QMainWindow::separator {
+    background-color: #d0d0d0;
+    width: 1px;
+    height: 1px;
+}
+
+/* Adjust central widget */
+QMainWindow > QWidget > QWidget {
+    background-color: #f0f0f0;
+}

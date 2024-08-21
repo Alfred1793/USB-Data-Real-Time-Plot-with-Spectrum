@@ -4,6 +4,7 @@ from .connection_info_widget import ConnectionInfoWidget
 from .waveform_save_panel import WaveformSavePanel
 from config import X_AXIS_RANGE, Y_AXIS_RANGE
 from waveform_saver import WaveformSaver
+import os
 
 class AppWindow(QtWidgets.QMainWindow):
     """
@@ -23,11 +24,11 @@ class AppWindow(QtWidgets.QMainWindow):
         :param show_connection_info: 布尔值，指示是否显示设备连接信息面板。
         """
         super().__init__()
-        self.reader = reader  # 数据读取器对象
-        self.use_simulated_signal = use_simulated_signal  # 是否使用模拟信号
-        self.show_connection_info = show_connection_info  # 是否显示设备连接信息面板
-        self.waveform_saver = WaveformSaver(self.reader)  # 波形保存器对象
-        self.init_ui()  # 初始化用户界面
+        self.reader = reader
+        self.use_simulated_signal = use_simulated_signal
+        self.show_connection_info = show_connection_info
+        self.waveform_saver = WaveformSaver(self.reader)
+        self.init_ui()
 
     def init_ui(self):
         """
@@ -39,6 +40,10 @@ class AppWindow(QtWidgets.QMainWindow):
         self.setCentralWidget(self.central_widget)
         self.main_layout = QtWidgets.QHBoxLayout(self.central_widget)
 
+        # 加载并应用全局样式表
+        style_path = os.path.join(os.path.dirname(__file__), 'styles.qss')
+        with open(style_path, 'r') as f:
+            self.setStyleSheet(f.read())
         # 左侧信息面板
         if self.show_connection_info:
             self.connection_info_widget = ConnectionInfoWidget(self.reader.get_device_info())
