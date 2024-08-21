@@ -1,10 +1,23 @@
-# Installation Guide
+# Signal Generator and USB Reader Application
 
-## Prerequisites
+## Overview
+
+This project is a Python application designed for generating and reading signals using a USB interface. It provides a graphical user interface (GUI) to visualize signals and manage waveform data.
+
+## Features
+
+- **Signal Generation**: Simulates signal generation with adjustable parameters.
+- **USB Reader**: Interfaces with USB devices to read incoming data.
+- **Waveform Visualization**: Displays signal waveforms using Matplotlib integrated with PySide6.
+- **Waveform Saving**: Allows users to save waveform data to CSV files.
+
+## Installation Guide
+
+### Prerequisites
 
 Before installing the dependencies, ensure you have Python 3.7 or later installed on your system.
 
-## Installing Dependencies
+### Installing Dependencies
 
 1. Clone the repository or download the source code.
 
@@ -16,11 +29,11 @@ Before installing the dependencies, ensure you have Python 3.7 or later installe
    pip install -r requirements.txt
    ```
 
-## Special Instructions for pyusb
+### Special Instructions for pyusb
 
 The pyusb package requires additional setup beyond a simple pip installation:
 
-### On Windows:
+#### On Windows:
 
 1. Install the appropriate USB driver for your device. This might be:
    - WinUSB
@@ -29,7 +42,7 @@ The pyusb package requires additional setup beyond a simple pip installation:
 
 2. You may need to use Zadig (http://zadig.akeo.ie/) to install the driver for your specific USB device.
 
-### On Linux:
+#### On Linux:
 
 1. Install libusb:
    ```bash
@@ -47,7 +60,7 @@ The pyusb package requires additional setup beyond a simple pip installation:
    sudo udevadm control --reload-rules && sudo udevadm trigger
    ```
 
-### On macOS:
+#### On macOS:
 
 1. Install libusb using Homebrew:
    ```bash
@@ -56,7 +69,7 @@ The pyusb package requires additional setup beyond a simple pip installation:
 
 After setting up libusb, you should be able to use pyusb successfully.
 
-## Verifying the Installation
+### Verifying the Installation
 
 After installing all dependencies, you can verify the installation by running a simple Python script that imports the required libraries:
 
