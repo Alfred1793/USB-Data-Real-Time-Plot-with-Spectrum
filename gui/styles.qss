@@ -1,11 +1,11 @@
 /* Global styles */
-QWidget {
+QWidget{
     font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 12px;
 }
 
 QMainWindow, QDialog {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 QPushButton {
@@ -56,6 +56,33 @@ QTreeView::item:selected {
     color: white;
 }
 
+
+QMessageBox {
+    background-color: #f0f0f0; /* Matches the main window's background */
+    color: #000000; /* Ensures text is black and visible */
+}
+
+QMessageBox QLabel {
+    color: #000000; /* Ensures the label text inside the message box is visible */
+}
+
+QMessageBox QPushButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QMessageBox QPushButton:pressed {
+    background-color: #004085;
+}
+
+
 /* Custom styles for specific widgets */
 #ConnectionInfoWidget {
     background-color: #ffffff;
@@ -78,7 +105,7 @@ QTreeView::item:selected {
 }
 
 /* Specific adjustments for main window */
-QMainWindow > QWidget {
+/* QMainWindow > QWidget {
     background-color: transparent;
 }
 
@@ -86,9 +113,11 @@ QMainWindow::separator {
     background-color: #d0d0d0;
     width: 1px;
     height: 1px;
-}
+} */
 
 /* Adjust central widget */
-QMainWindow > QWidget > QWidget {
+/* QMainWindow > QWidget > QWidget {
     background-color: #f0f0f0;
-}
+} */
+
+
