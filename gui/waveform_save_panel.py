@@ -101,7 +101,11 @@ class WaveformSavePanel(QtWidgets.QWidget):
             QtWidgets.QMessageBox.warning(self, "警告", "请输入文件名")
             return
 
-        record_time = self.time_spinbox.value()
+        try:
+            record_time = int(self.time_input.text())
+        except ValueError:
+            QtWidgets.QMessageBox.warning(self, "警告", "请输入有效的记录时间")
+            return
 
         # 发送保存信号
         self.save_signal.emit(path, filename, record_time)
