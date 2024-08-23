@@ -1,4 +1,4 @@
-# Signal Generator and USB Reader Application
+# USB Data Real-Time Plot with Spectrum
 
 ## Overview
 
