@@ -5,11 +5,11 @@ QWidget{
 }
 
 QMainWindow, QDialog {
-    background-color: #ffffff;
+    background-color: #f0f2f5; /* Light gray background */
 }
 
 QPushButton {
-    background-color: #007bff;
+    background-color: #0073e6; /* Blue */
     color: white;
     border: none;
     padding: 8px 16px;
@@ -17,57 +17,56 @@ QPushButton {
 }
 
 QPushButton:hover {
-    background-color: #0056b3;
+    background-color: #005bb5; /* Darker blue */
 }
 
 QPushButton:pressed {
-    background-color: #004085;
+    background-color: #004a99; /* Even darker blue */
 }
 
 QLineEdit, QSpinBox {
-    border: 1px solid #ced4da;
+    border: 1px solid #d1d1d1; /* Light gray */
     border-radius: 4px;
     padding: 6px;
     background-color: white;
 }
 
 QLineEdit:focus, QSpinBox:focus {
-    border-color: #80bdff;
+    border-color: #0073e6; /* Blue */
     border-width: 2px;
 }
 
 QLabel {
-    color: #495057;
+    color: #333333; /* Dark gray */
     border: none;
 }
 
 QTreeView {
-    border: 1px solid #ced4da;
+    border: 1px solid #d1d1d1; /* Light gray */
     border-radius: 4px;
     background-color: white;
 }
 
 QTreeView::item:hover {
-    background-color: #e9ecef;
+    background-color: #e6f2ff; /* Light blue */
 }
 
 QTreeView::item:selected {
-    background-color: #007bff;
+    background-color: #0073e6; /* Blue */
     color: white;
 }
 
-
 QMessageBox {
-    background-color: #f0f0f0; /* Matches the main window's background */
-    color: #000000; /* Ensures text is black and visible */
+    background-color: #f0f2f5; /* Light gray background */
+    color: #000000; /* Black text */
 }
 
 QMessageBox QLabel {
-    color: #000000; /* Ensures the label text inside the message box is visible */
+    color: #000000; /* Black text */
 }
 
 QMessageBox QPushButton {
-    background-color: #007bff;
+    background-color: #0073e6; /* Blue */
     color: white;
     border: none;
     padding: 8px 16px;
@@ -75,13 +74,12 @@ QMessageBox QPushButton {
 }
 
 QMessageBox QPushButton:hover {
-    background-color: #0056b3;
+    background-color: #005bb5; /* Darker blue */
 }
 
 QMessageBox QPushButton:pressed {
-    background-color: #004085;
+    background-color: #004a99; /* Even darker blue */
 }
-
 
 /* Custom styles for specific widgets */
 #ConnectionInfoWidget {
@@ -103,21 +101,3 @@ QMessageBox QPushButton:pressed {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
 }
-
-/* Specific adjustments for main window */
-/* QMainWindow > QWidget {
-    background-color: transparent;
-}
-
-QMainWindow::separator {
-    background-color: #d0d0d0;
-    width: 1px;
-    height: 1px;
-} */
-
-/* Adjust central widget */
-/* QMainWindow > QWidget > QWidget {
-    background-color: #f0f0f0;
-} */
-
-
