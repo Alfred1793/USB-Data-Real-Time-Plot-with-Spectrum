@@ -4,9 +4,7 @@ import numpy as np
 import csv
 from threading import Thread, Event
 from collections import deque
-
-# 假设采样率为1000样本/秒
-SAMPLE_RATE = 1000
+from config import SAMPLE_RATE
 
 class WaveformSaver:
     def __init__(self, usb_reader):
@@ -19,7 +17,7 @@ class WaveformSaver:
         self.save_thread = None  # 保存数据的线程对象
         self.stop_event = Event()  # 用于停止保存线程的事件
         # 使用双端队列存储数据，最多存储1小时的数据（以SAMPLE_RATE计算）
-        self.data_buffer = deque(maxlen=SAMPLE_RATE * 3600)
+        self.data_buffer = deque(maxlen=int(SAMPLE_RATE) * 3600)
 
     def start_saving(self, path, filename, record_time):
         """
