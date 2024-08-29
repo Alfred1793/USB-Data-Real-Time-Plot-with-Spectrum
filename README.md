@@ -31,7 +31,7 @@ Before installing the dependencies, ensure you have Python 3.7 or later installe
 
 ## Running the Application
 
-1. After installing the dependencies, you can run the application by executing the following command:
+1. You can run the application by executing the following command:
 
    ```bash
    python main.py
